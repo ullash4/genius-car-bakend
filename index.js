@@ -22,6 +22,7 @@ async function run(){
         // basic formation
         await client.connect();
         const serviceCollection = client.db('geniusCar').collection('services');
+        const orderCollection = client.db('geniusCar').collection('order')
 
         // to get data
         app.get('/service', async(req, res)=>{
@@ -52,6 +53,13 @@ async function run(){
             const query = {_id:ObjectId(id)}
             const result = await serviceCollection.deleteOne(query)
             res.send(result);
+        })
+
+        // Create order collection
+        app.post('/order', async(req, res)=>{
+            const order = req.body;
+            const result = await orderCollection.insertOne(order)
+            res.send(result)
         })
 
 
