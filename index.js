@@ -60,6 +60,11 @@ async function run() {
       res.send(services);
     });
 
+    // testing heroku after updating
+    app.get('/hero', (req, res)=>{
+      res.send('heroku is running successfuly')
+    })
+
     // to get one single data
     app.get("/service/:id", async (req, res) => {
       const id = req.params.id;
