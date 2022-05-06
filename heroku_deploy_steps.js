@@ -21,5 +21,10 @@
  * -----------------------------------------------
  * 1. update git push
  * 2. git push heroku main
+ * -------------------------------------
+ * Connect to client side
+ * 1. replace loacal link to heroku link
+ * 2. yarn run build
+ * 3. firebase deploy
  
  */
